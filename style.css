@@ -61,22 +61,32 @@ body {
   100% { opacity: 1; transform: translateY(0); }
 }
 
+/* Responsive font sizes */
+:root {
+  --font-name-min: 1.2rem;
+  --font-name-max: 2.5rem;
+  --font-title-min: 0.9rem;
+  --font-title-max: 1.5rem;
+}
+
 .name {
-  width: 62%;
-  text-align: right;
-  font-weight: bold;
-  font-size: 1.8em;
-  margin: -100px 0 5px;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  font-size: clamp(var(--font-name-min), 4vw, var(--font-name-max));
+  margin: clamp(-4.3rem, -10vw, -10rem) 0 0.5rem;
   color: #ffffff;
 }
 
 .title {
-  width: 56%;
-  font-size: 1.1em;
-  margin: 2px 0 15px;
+  width: 100%;
+  text-align: center;
   font-weight: 300;
+  font-size: clamp(var(--font-title-min), 2.5vw, var(--font-title-max));
+  margin: 0.2rem 0 .1rem;
   color: #ffffff;
 }
+/* Responsive adjustments end */
 
 .company {
   font-weight: bold;
