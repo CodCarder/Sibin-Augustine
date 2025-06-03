@@ -106,29 +106,49 @@ body {
 }
 /* Responsive adjustments end */
 
+
+
+/* Company title */
 .company {
   font-weight: bold;
-  font-size: 1.7em;
-  margin: 10% 0 2%;
-  color:#ffb700;
+  font-size: clamp(1.2rem, 3vw, 1.7em); /* Responsive font */
+  margin: 5% 0 2%; /* Reduced top margin for smaller screens */
+  color: #ffb700;
+  text-align: center;
 }
 
+/* Icon container */
 .icons {
   margin: 20px 0;
   display: flex;
   justify-content: center;
-  gap: 35px;
+  flex-wrap: wrap; /* Wrap icons on small screens */
+  gap: clamp(15px, 5vw, 35px); /* Responsive gap */
 }
 
+/* Icon links */
 .icons a {
   text-decoration: none;
   color: #7c4585;
-  font-size: 1.5em;
+  font-size: clamp(1.2em, 3vw, 1.5em); /* Responsive icon size */
   opacity: 0;
   animation-duration: 0.8s;
   animation-fill-mode: forwards;
   animation-timing-function: ease;
 }
+
+/* Optional: Add responsive spacing if needed */
+@media (max-width: 480px) {
+  .company {
+    margin: 3% 0 1%;
+  }
+
+  .icons {
+    gap: 10px;
+  }
+}
+
+
 
 .icons a:nth-child(1) { animation-name: slideInLeft; animation-delay: 0.2s; }
 .icons a:nth-child(2) { animation-name: slideInTop; animation-delay: 0.4s; }
