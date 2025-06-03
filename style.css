@@ -177,23 +177,28 @@ body {
   100% { opacity: 1; transform: scale(1); }
 }
 
+
 .section2 {
   background: #7C4585;
   color: #ffffff;
   border-radius: 12px;
-  padding: 20px;
-  margin-top: 20px;
+  padding: clamp(1rem, 4vw, 2rem); /* Responsive padding */
+  margin-top: clamp(1rem, 3vw, 2rem); /* Responsive margin */
 }
 
-.section h2 {
-  margin-bottom: 10px;
-  font-size: 1.2em;
+/* Ensure class is correct – changed from .section to .section2 if intended */
+.section2 h2 {
+  margin-bottom: clamp(0.5rem, 2vw, 1rem); /* Responsive spacing */
+  font-size: clamp(1rem, 2.5vw, 1.5rem); /* Responsive font */
 }
 
-.section p {
+.section2 p {
   margin: 5px 0;
-  font-size: 0.95em;
+  font-size: clamp(0.85rem, 2vw, 1rem); /* Responsive font */
+  line-height: 1.6; /* Improved readability */
 }
+
+
 
 .footer {
   margin-top: 20px;
@@ -281,25 +286,39 @@ body {
   z-index: 999;
 }
 
+
 .gallery-carousel {
   width: 100%;
   max-width: 350px;
   margin: auto;
   overflow: hidden;
   position: relative;
+  border-radius: 10px; /* Added to container for consistent rounding */
 }
 
+/* Images inside carousel */
 .gallery-carousel img {
   width: 100%;
   height: auto;
   display: none;
   border-radius: 10px;
   transition: opacity 0.5s ease-in-out;
+  object-fit: cover; /* Ensures images cover area nicely */
+  max-height: clamp(200px, 40vw, 300px); /* Responsive max height */
 }
 
 .gallery-carousel img.active {
   display: block;
 }
+
+/* Responsive tweaks */
+@media (max-width: 400px) {
+  .gallery-carousel {
+    max-width: 90vw; /* More flexible on small screens */
+  }
+}
+
+
 
 .modal {
   display: none;
